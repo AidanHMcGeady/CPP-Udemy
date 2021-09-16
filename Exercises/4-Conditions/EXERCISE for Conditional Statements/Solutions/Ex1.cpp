@@ -2,34 +2,42 @@
 
 using namespace std;
 
-
-bool result = false;
-
 int main()
 {
-    do
+    int Min;
+    int Max;
+    int Mid;
+
+    bool MinMid;
+    bool MaxMid;
+
+    cout << "Test the program! You should input a low number first, a high number second, and a number between them third. But feel free to get this wrong." << endl;
+
+    cout << "Low Number: ";
+    cin >> Min;
+
+    cout << "High Number: ";
+    cin >> Max;
+
+    if (Max <= Min)
     {
-        int points;
+        cout << "ERROR!! Max cannot be lower than Min. Program will stop." << endl;
 
-        cout << "How much did you achieve in your 100 point test? " << endl;
+        return EXIT_FAILURE;
+    }
 
-        cin >> points;
+    cout << "Middle Number: ";
+    cin >> Mid;
 
-        if(points > 100 || points < 0)
-        {
-            cout << "ERROR. The number of points is invalid !" << endl;
-        }
-        else if (points < 50)
-        {
-            cout << "You did not score high enough to pass !" << endl;
-            result = true;
-        }
-        else
-        {
-            cout << "You pass !" << endl;
-            result = true;
-        }
+    if (Mid >= Min)
+    {
+        MinMid = true;
+    }
 
-        points = NULL;
-    } while (result == false);
+    if (Mid <= Max)
+    {
+        MaxMid = true;
+    }
+
+    cout << "Is middle number higher than low number? " << MinMid << endl << "Is middle number lower than high number? " << MaxMid << endl;
 }
