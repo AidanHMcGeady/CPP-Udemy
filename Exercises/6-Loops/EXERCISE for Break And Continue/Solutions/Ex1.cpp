@@ -15,7 +15,7 @@ int main()
     {
 
 
-        if (i % 2 == 0 && i / 2 != 0)
+        if (i % 2 == 0 && i != 0)
         {
             cout << sum << " + " << i << " = ";
             sum = sum + i;
