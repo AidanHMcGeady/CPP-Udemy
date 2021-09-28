@@ -2,42 +2,71 @@
 
 using namespace std;
 
-int intNumber(int a, int b)
+int result, a, b, c, d, e;
+
+int add(int, int);
+int add(int, int, int);
+int add(int, int, int, int);
+int add(int, int, int, int, int);
+
+int add(int a, int b)
 {
-    int tempInt = b;
-
-    while(a-- > 1)
-        b *= tempInt;
-
-    return b;
+    result = a + b;
 }
 
-double doubleNumber(double c, double d)
+int add(int a, int b, int c)
 {
-    double tempDouble = d;
-
-    while(c-- > 1)
-        d *= tempDouble;
-
-    return d;
+    result = a + b + c;
 }
 
-string stringWord(string e, string f)
+int add(int a, int b, int c, int d)
 {
-    string tempString = f;
-    int g = e.size();
+    result = a + b + c + d;
+}
 
-    while(g-- > 1)
-        f += tempString;
-
-    return f;
+int add(int a, int b, int c, int d, int e)
+{
+    result = a + b + c + d + e;
 }
 
 int main()
 {
-    cout << intNumber(2, 5) << endl;
+    int choice;
 
-    cout << doubleNumber(4.44, 5.26) << endl;
+    cout << "How many numbers do you want to add together? (2 - 5)" << endl;
+    cin >> choice;
 
-    cout << stringWord("Kings", "S.O.S ") << endl;
+    switch(choice)
+    {
+        case 2:
+            cout << "Please enter two numbers" << endl;
+            cin >> a; cin >> b;
+
+            cout << add(a, b);
+            break;
+
+        case 3:
+            cout << "Please enter three numbers" << endl;
+            cin >> a; cin >> b; cin >> c;
+
+            cout << add(a, b, c);
+            break;
+
+        case 4:
+            cout << "Please enter four numbers" << endl;
+            cin >> a; cin >> b; cin >> c; cin >> d;
+
+            cout << add(a, b, c, d);
+            break;
+
+        case 5:
+            cout << "Please enter five numbers" << endl;
+            cin >> a; cin >> b; cin >> c; cin >> d; cin >> e;
+
+            cout << add(a, b, c, d, e);
+            break;
+
+        default:
+            cout << "You didn't choose an option, application is closing.";
+    }
 }
